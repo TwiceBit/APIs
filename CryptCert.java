@@ -4,12 +4,7 @@ import java.util.Scanner;
 
 public class CryptCert {
 
-	public static void main(String[] args) {
-
-		CreateCert("/root/Schreibtisch/test/cert");
-
-		GetKey("/root/Schreibtisch/test/cert");
-	}
+	
 
 	public static void CreateCert(String url) {
 		File f = new File(url);
