@@ -5,4 +5,6 @@
 
 +GPIOControl for the raspberry pi
 
-+Timer is a scheduler
++Timer (Is a scheduler)
+
++Espeak API
