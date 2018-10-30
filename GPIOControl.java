@@ -1,5 +1,4 @@
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -44,12 +43,7 @@ public class GPIOControl {
 	}
 
 	public static void direction(int gpio, String direction) {
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e1) {
-
-			e1.printStackTrace();
-		}
+		
 		String gptxt = String.valueOf(gpio);
 		File f = new File(gpiopath + "/gpio" + gptxt + "/direction");
 
@@ -65,34 +59,24 @@ public class GPIOControl {
 
 	}
 
-	public static void wride(int gpio, int value) {
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e1) {
-
-			e1.printStackTrace();
-		}
+	public static void write(int gpio, int value) {
+		
 		String gptxt = String.valueOf(gpio);
 		File f = new File(gpiopath + "/gpio" + gptxt + "/value");
 
 		try {
 			PrintWriter w = new PrintWriter(f);
-			w.write(value);
+			w.write(String.valueOf(value));
 			w.flush();
 			w.close();
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			checkFile(f);
 		}
 
 	}
 
 	public static int read(int gpio) {
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e1) {
-
-			e1.printStackTrace();
-		}
+		
 		String gptxt = String.valueOf(gpio);
 		File f = new File(gpiopath + "/gpio" + gptxt + "/value");
 
